@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Munlite Photography`,
+    description: `Some Phtography description thing.`,
+    author: `Hasiba Khan`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -12,6 +12,15 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+        resolve: 'gatsby-source-sanity',
+        options: {
+            projectId: 'xwe9a4vi',
+            dataset: 'production',
+            overlayDrafts: true,
+            watchMode: true
+        }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -27,6 +36,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
