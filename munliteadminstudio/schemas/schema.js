@@ -16,6 +16,7 @@ import favoritesGallery from './favoritesGallery'
 import maternityGallery from './maternityGallery'
 import portraitsGallery from './portraitsGallery'
 import weddingsGallery from './weddingsGallery'
+import aboutImage from './aboutImage'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -37,6 +38,7 @@ export default createSchema({
     maternityGallery,
     portraitsGallery,
     weddingsGallery,
+    aboutImage,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent
