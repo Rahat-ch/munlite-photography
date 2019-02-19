@@ -12,9 +12,9 @@ import "../styles/styles.scss"
 
 
 
-export const homeImageQuery = graphql`
+export const portraitsImageQuery = graphql`
 {
-allSanityHomeGallery{
+allSanityPortraitsGallery{
 edges{
   node{
       title
@@ -31,15 +31,15 @@ edges{
 }
 `
 
-const IndexPage = ({ data }) => (
+const PortraitsPage = ({ data }) => (
   <Layout>
-    <Lightbox images={data.allSanityHomeGallery.edges} />
+    <Lightbox images={data.allSanityPortraitsGallery.edges} />
   </Layout>
 )
 
-IndexPage.propTypes = {
+PortraitsPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
 
-export default IndexPage
+export default PortraitsPage

@@ -12,9 +12,9 @@ import "../styles/styles.scss"
 
 
 
-export const homeImageQuery = graphql`
+export const engagementImageQuery = graphql`
 {
-allSanityHomeGallery{
+allSanityEngagementGallery{
 edges{
   node{
       title
@@ -31,15 +31,15 @@ edges{
 }
 `
 
-const IndexPage = ({ data }) => (
+const EngagementPage = ({ data }) => (
   <Layout>
-    <Lightbox images={data.allSanityHomeGallery.edges} />
+    <Lightbox images={data.allSanityEngagementGallery.edges} />
   </Layout>
 )
 
-IndexPage.propTypes = {
+EngagementPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
 
-export default IndexPage
+export default EngagementPage

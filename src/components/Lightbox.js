@@ -108,6 +108,9 @@ const StyledImg = styled(Img)`
 
 const Gallery = styled.div`
   display: grid;
+  margin-left: 30%;
+  padding-top: 3%;
+  margin-right: 1.2rem;
   grid-template-columns: 1fr;
   @media (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
@@ -117,7 +120,7 @@ const Gallery = styled.div`
   }
 
   @media (min-width: 1100px) {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   grid-gap: 15px;
@@ -158,8 +161,10 @@ const Controls = styled.div`
 
 const LeftRight = styled.div`
   button:first-child {
-    margin-right: 10px;
+    margin-right: 100px;
+
   }
+
 `
 
 Lightbox.propTypes = {

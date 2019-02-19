@@ -1,16 +1,45 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
+import PropTypes from 'prop-types'
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
+import Lightbox from '../components/Lightbox'
 
-const SecondPage = () => (
+import "../components/layout.css"
+import 'react-image-lightbox/style.css';
+import "../styles/styles.scss"
+
+
+
+export const favoritesImageQuery = graphql`
+{
+allSanityFavoritesGallery{
+edges{
+  node{
+      title
+    image{
+      asset{
+        fluid{
+          ...GatsbySanityImageFluid
+        }
+      }
+    }
+  }
+}
+}
+}
+`
+
+const FavoritesPage = ({ data }) => (
   <Layout>
-    <SEO title="Page two" />
-    <h1 className="testing">Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Lightbox images={data.allSanityFavoritesGallery.edges} />
   </Layout>
 )
 
-export default SecondPage
+FavoritesPage.propTypes = {
+  data: PropTypes.object.isRequired,
+}
+
+
+export default FavoritesPage
